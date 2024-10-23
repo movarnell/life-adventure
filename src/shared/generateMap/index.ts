@@ -1,0 +1,1 @@
+export { generateMap as default } from "./generateMap"
