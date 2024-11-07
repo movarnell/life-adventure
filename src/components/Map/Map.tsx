@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux"
-import { selectMap } from "../../redux/mapSlice"
+import { selectMap } from "../../redux"
 import Lot from "./Lot"
 import Road from "./Road"
 import Pin from "./Pin"
@@ -8,7 +8,7 @@ import CharacterPin from "./CharacterPin"
 type Props = {}
 export default function Map({ }: Props) {
     const { lots, roads, rows, columns } = useSelector(selectMap)
-    const tileSize = 300
+    const tileSize = 200
 
     return (
         <>

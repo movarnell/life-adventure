@@ -29,7 +29,6 @@ export const getBuildingImageSliceSpecs = (tileSize: number) => {
             break
         }
     }
-    console.log(spec)
     const sizeScaler = (tileSize / spec.size)
     return {
         size: sizeScaler * 1000,
