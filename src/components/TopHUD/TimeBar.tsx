@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { selectCharacterTime } from "../../redux/gameSlice"
-import timeImg from "../../assets/time-icon.png"
+import timeImg from "../../assets/icons/time.png"
 
 type Props = {
   className?: string,

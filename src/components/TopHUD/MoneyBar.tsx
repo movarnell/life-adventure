@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux"
 import { selectCharacterMoney } from "../../redux/gameSlice"
-import moneyIcon from "../../assets/money-icon.png"
+import moneyIcon from "../../assets/icons/money.png"
 
 type Props = {}
 export default function MoneyBar({ }: Props) {

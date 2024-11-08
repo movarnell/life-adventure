@@ -21,7 +21,7 @@ export default function Map({ }: Props) {
                             tileSize={tileSize}
                         />
                     ))}
-                    <CharacterPin/>
+                    <CharacterPin tileSize={tileSize}/>
                 </div>
                 {/* <svg
                     xmlns="http://www.w3.org/2000/svg"

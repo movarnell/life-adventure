@@ -1,8 +1,9 @@
+import { useSelector } from "react-redux"
 import Body from "./Body"
 import Face from "./Face"
-import Hair from "./Hair/Hair"
-import { HAIR_COLORS, HAIR_TYPES, SKIN_COLORS } from "./Hair/HAIR_TYPES"
+import Hair from "./Hair"
 import { SVGContext } from "./SVGContext"
+import { selectCharacterAppearance } from "../../redux"
 
 const sizeSpecs = {
   // width, height, strokeWidth
@@ -17,15 +18,11 @@ type Props = {
 }
 
 export default function Character({ size = "md" }: Props) {
-  // Random for now
-  const skinColor = SKIN_COLORS[Math.floor(Math.random() * SKIN_COLORS.length)]
-  const hairColor = HAIR_COLORS[Math.floor(Math.random() * HAIR_COLORS.length)]
-  const hairType = HAIR_TYPES[Math.floor(Math.random() * HAIR_TYPES.length)]
-
+  const { hairType, hairColor, skinColor } = useSelector(selectCharacterAppearance)
   const [width, height, strokeWidth] = sizeSpecs[size]
 
   return (
-    <div>
+    <div className="py-5 px-2">
       <SVGContext.Provider value={{
         primaryColor: skinColor,
         secondaryColor: hairColor,

@@ -1,9 +1,8 @@
 import { Building, BuildingType } from "./types";
-import { v4 as uuid } from "uuid"
-import apartmentImg from "../assets/apartments.png"
-import fastFoodImg from "../assets/fast-food.png"
+import apartmentImg from "../assets/buildings/apartments.png"
+import fastFoodImg from "../assets/buildings/fast-food.png"
 
-export const BUILDING_PLANS: Omit<Building, "lot">[] = [
+export const BUILDING_PLANS: Omit<Building, "lotId">[] = [
     {
         id: "0",
         type: BuildingType.LIVING,
