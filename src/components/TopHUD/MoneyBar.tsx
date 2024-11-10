@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux"
-import { selectCharacterMoney } from "../../redux/gameSlice"
+import { selectMoney } from "../../redux/gameSlice"
 import moneyIcon from "../../assets/icons/money.png"
 
 type Props = {}
 export default function MoneyBar({ }: Props) {
-  const money = useSelector(selectCharacterMoney)
+  const money = useSelector(selectMoney)
   return (
     <div className="flex items-center w-48">
       <img src={moneyIcon} className="h-14 -me-7 z-10 mb-2"/>

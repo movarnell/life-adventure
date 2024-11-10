@@ -3,7 +3,7 @@ import Body from "./Body"
 import Face from "./Face"
 import Hair from "./Hair"
 import { SVGContext } from "./SVGContext"
-import { selectCharacterAppearance } from "../../redux"
+import { selectAppearance } from "../../redux"
 
 const sizeSpecs = {
   // width, height, strokeWidth
@@ -18,7 +18,7 @@ type Props = {
 }
 
 export default function Character({ size = "md" }: Props) {
-  const { hairType, hairColor, skinColor } = useSelector(selectCharacterAppearance)
+  const { hairType, hairColor, skinColor } = useSelector(selectAppearance)
   const [width, height, strokeWidth] = sizeSpecs[size]
 
   return (

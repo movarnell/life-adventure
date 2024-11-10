@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 import Pin from "./Pin";
-import { selectCharacterLocation } from "../../redux/gameSlice";
+import { selectLocation } from "../../redux/gameSlice";
 
 type Props = {
     tileSize: number
 }
 
 export default function CharacterPin({ tileSize }: Props) {
-    const location = useSelector(selectCharacterLocation)
+    const { coordinates } = useSelector(selectLocation)
     return (
-        <Pin location={location} tileSize={tileSize}>
+        <Pin coordinates={coordinates} tileSize={tileSize}>
             C
         </Pin>
     )

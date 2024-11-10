@@ -8,7 +8,7 @@ type Props = {
     tileSize: number
 }
 
-export default function Building({ buildingId, tileSize }: Props) {
+export default function BuildingPin({ buildingId, tileSize }: Props) {
     const building = useSelector(selectBuilding(buildingId))
     if (!building) return null
 

@@ -8,12 +8,18 @@ import {
 } from "../components/Character/Hair/HAIR_TYPES";
 
 const initialState = {
-  map: generateMap(2, 2),
   money: 150,
-  currentTime: 200,
-  maxTime: 900,
-  currentLocation: [0, 0] as [number, number],
-  currentBuilding: "",
+  happiness: 100,
+  eatenToday: false,
+  map: generateMap(2, 2),
+  time: {
+    current: 200,
+    max: 900,
+  },
+  location: {
+    coordinates: [0, 0] as [number, number],
+    buildingId: "",
+  },
   appearance: {
     // Random for now
     hairType: HAIR_TYPES[Math.floor(Math.random() * HAIR_TYPES.length)],
@@ -21,7 +27,6 @@ const initialState = {
     skinColor: SKIN_COLORS[Math.floor(Math.random() * SKIN_COLORS.length)],
     clothes: [],
   },
-  happiness: 100,
   skills: {
     charisma: 4, // red - better at making friends and getting jobs
     athleticism: 0, // orange - increased time bar
@@ -42,8 +47,8 @@ const gameSlice = createSlice({
       if (!building) return;
       const lot = state.map.lots.find((l) => l.id === building.lotId);
       if (!lot) return;
-      state.currentLocation = lot.centerLocation;
-      state.currentBuilding = building.id;
+      state.location.coordinates = lot.centerLocation;
+      state.location.buildingId = building.id;
     },
   },
 });
@@ -54,22 +59,19 @@ export const { moveCharacterToBuilding } = gameSlice.actions;
 
 /***** Selectors *****/
 
-export const selectMap = (state: RootState) => state.game.map;
-
 export const selectBuilding = (id: ID | null) => (state: RootState) =>
   state.game.map.buildings.find((b) => b.id === id);
 
-export const selectCharacterMoney = (state: RootState) => state.game.money;
+export const selectMoney = (state: RootState) => state.game.money;
+export const selectTime = (state: RootState) => state.game.time;
+export const selectMap = (state: RootState) => state.game.map;
+export const selectAppearance = (state: RootState) => state.game.appearance;
+export const selectLocation = (state: RootState) => state.game.location;
+export const selectSkills = (state: RootState) => state.game.skills;
 
-export const selectCharacterTime = (state: RootState) => ({
-  current: state.game.currentTime,
-  max: state.game.maxTime,
-});
-
-export const selectCharacterAppearance = (state: RootState) =>
-  state.game.appearance;
-
-export const selectCharacterLocation = (state: RootState) =>
-  state.game.currentLocation;
-
-export const selectCharacterSkills = (state: RootState) => state.game.skills;
+export const selectLocationBuilding = (state: RootState) =>
+  state.game.location.buildingId
+    ? state.game.map.buildings.find(
+        (b) => b.id === state.game.location.buildingId
+      )
+    : null;

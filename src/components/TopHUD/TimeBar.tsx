@@ -1,12 +1,12 @@
 import { useSelector } from "react-redux"
-import { selectCharacterTime } from "../../redux/gameSlice"
+import { selectTime } from "../../redux/gameSlice"
 import timeImg from "../../assets/icons/time.png"
 
 type Props = {
   className?: string,
 }
 export default function TimeBar({ className }: Props) {
-  const { current, max } = useSelector(selectCharacterTime)
+  const { current, max } = useSelector(selectTime)
   const percentage = 100 * current / max
   return (
     <div className={"flex items-center " + className}>

@@ -1,4 +1,5 @@
 export { default as generateMap } from "./generateMap"
-export { getById } from "./getById"
+export type { Product, ProductType } from "./products-data"
+export type { Building, BuildingType } from "./map-data"
 export * from "./directions"
 export * from "./types"

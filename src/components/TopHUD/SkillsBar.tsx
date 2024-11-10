@@ -6,13 +6,13 @@ import practicalityIcon from "../../assets/icons/practicality.png"
 import intelligenceIcon from "../../assets/icons/intelligence.png"
 import creativityIcon from "../../assets/icons/creativity.png"
 import { useSelector } from "react-redux"
-import { selectCharacterSkills } from "../../redux"
+import { selectSkills } from "../../redux"
 
-export default function StatsBar() {
+export default function SkillsBar() {
     const {
         charisma, athleticism, creativity, caretaking,
         intelligence, practicality, cooking
-    } = useSelector(selectCharacterSkills)
+    } = useSelector(selectSkills)
 
     const divClassName = "flex gap-1 items-center font-bold bg-gray-400 rounded-full p-2"
     return (

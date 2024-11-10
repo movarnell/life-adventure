@@ -1,6 +1,6 @@
 import Character from "../Character";
 import MoneyBar from "./MoneyBar";
-import StatsBar from "./StatsBar";
+import SkillsBar from "./SkillsBar";
 import TimeBar from "./TimeBar";
 
 export default function TopHUD() {
@@ -9,7 +9,7 @@ export default function TopHUD() {
       <div>
         <div className="flex border-4 border-black bg-gray-200 rounded">
           <Character size="md" />
-          <StatsBar />
+          <SkillsBar />
         </div>
       </div>
       <TimeBar className="w-1/2" />

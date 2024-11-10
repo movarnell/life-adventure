@@ -1,3 +1,5 @@
+import { Building } from "./map-data";
+
 export type ID = string;
 
 const TOP = 0 as const;
@@ -24,21 +26,6 @@ export type Road = {
   startLocation: [number, number];
   endLocation: [number, number];
 };
-
-export enum BuildingType {
-    LIVING,
-    WORKING,
-    SHOPPING,
-    EATING
-}
-
-export type Building = {
-    id: ID;
-    type: BuildingType;
-    title: string;
-    lotId: ID;
-    image: string;
-}
 
 export type WorldMap = {
     lots: Lot[]

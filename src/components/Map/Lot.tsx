@@ -1,5 +1,5 @@
 import type { Lot } from "../../shared"
-import Building from "./Building/Building"
+import BuildingPin from "./BuildingPin"
 
 type Props = {
   lot: Lot
@@ -18,7 +18,7 @@ export default function BoardLot({
       left: (x - 0.5) * tileSize,
       top: (y - 0.5) * tileSize,
     }}>
-      {buildingId && <Building buildingId={buildingId} tileSize={tileSize} />}
+      {buildingId && <BuildingPin buildingId={buildingId} tileSize={tileSize} />}
     </div>
   )
 }
