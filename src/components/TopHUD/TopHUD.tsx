@@ -1,4 +1,5 @@
 import Character from "../Character";
+import { Tab } from "../TabNav";
 import MoneyBar from "./MoneyBar";
 import SkillsBar from "./SkillsBar";
 import TimeBar from "./TimeBar";
@@ -11,6 +12,10 @@ export default function TopHUD() {
           <Character size="md" />
           <SkillsBar />
         </div>
+      </div>
+      <div>
+        <Tab location="map" className="bg-gray-400 p-3 text-white" activeClass="bg-gray-600">Map</Tab>
+        <Tab location="building" className="bg-gray-400 p-3 text-white" activeClass="bg-gray-600">Building</Tab>
       </div>
       <TimeBar className="w-1/2" />
       <MoneyBar />
